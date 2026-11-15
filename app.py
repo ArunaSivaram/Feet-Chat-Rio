@@ -31,7 +31,12 @@ SIGNAL_LOGO_SVG = """
 </svg>
 """
 
-st.set_page_config(page_title="NovaCell Support", page_icon="📡", layout="wide")
+st.set_page_config(
+    page_title="NovaCell Support",
+    page_icon="📡",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
 _CUSTOM_CSS = """
 <style>
@@ -63,12 +68,20 @@ h1 {
 
 .stApp { background-color: #F7F8FA; }
 
-/* Hide default Streamlit chrome */
-header[data-testid="stHeader"],
+/* Hide Streamlit chrome, but keep the sidebar collapse/expand controls alive */
 [data-testid="stToolbar"],
 [data-testid="stDecoration"],
 #MainMenu,
 footer { display: none !important; }
+header[data-testid="stHeader"] {
+    background: transparent !important;
+    height: auto !important;
+}
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stSidebarCollapseButton"] {
+    display: block !important;
+    visibility: visible !important;
+}
 
 /* Centered 820px chat column */
 .main .block-container {
