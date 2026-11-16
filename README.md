@@ -23,9 +23,9 @@
 
 ## 🎬 Demo
 
-<!-- Drag your demo.mov/mp4 into this section on GitHub's README editor; the link will auto-embed as an inline video player -->
 
-> **TODO:** Drag the recorded `.mov`/`.mp4` into this section on github.com's README editor. GitHub will auto-upload it and embed a playable video here.
+https://github.com/user-attachments/assets/1d449f71-0adc-44ac-9870-b80d66300c00
+
 
 <br/>
 
