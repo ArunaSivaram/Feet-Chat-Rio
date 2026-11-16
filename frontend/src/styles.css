@@ -1,0 +1,134 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* NovaCell palette */
+  --background: #f7f8fa;
+  --foreground: #1f2933;
+
+  --card: #ffffff;
+  --card-foreground: #1f2933;
+
+  --popover: #ffffff;
+  --popover-foreground: #1f2933;
+
+  --primary: #0e7c86;
+  --primary-foreground: #ffffff;
+
+  --secondary: #eff1f4;
+  --secondary-foreground: #1f2933;
+
+  --muted: #eff1f4;
+  --muted-foreground: #6b7280;
+
+  --accent: #eff1f4;
+  --accent-foreground: #0e7c86;
+
+  --destructive: #d64545;
+  --destructive-foreground: #ffffff;
+
+  --border: #e4e7eb;
+  --input: #e4e7eb;
+  --ring: #0e7c86;
+
+  --radius: 0.75rem;
+
+  --sidebar: #eff1f4;
+  --sidebar-foreground: #1f2933;
+  --sidebar-primary: #0e7c86;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffffff;
+  --sidebar-accent-foreground: #0e7c86;
+  --sidebar-border: #e4e7eb;
+  --sidebar-ring: #0e7c86;
+
+  --tag-faq-bg: #e4e7eb;
+  --tag-faq-fg: #1f2933;
+  --tag-ticket-bg: #fef3c7;
+  --tag-ticket-fg: #e8590c;
+  --tag-guide-bg: #dcfce7;
+  --tag-guide-fg: #2f9e44;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-sans:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    letter-spacing: -0.005em;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .fade-in {
+    animation: fadeIn 180ms ease-out;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
